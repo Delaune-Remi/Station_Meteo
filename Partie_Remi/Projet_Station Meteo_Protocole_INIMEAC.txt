@@ -1,0 +1,55 @@
+
+Protocole TRAME INIMEAC :
+
+&#!INIMEAC;!SWD::VitesseVent::Unité;!DWD::DirectionVent::Unité;!TMP::TempératureAir::Unité;!RHY::Hygrométrie::Unité;!RPA::PressionAtmosphérique::Unité;!VAD:Validité:!
+
+Légende:
+
+-INIMEAC : Nom de la trame
+
+-SWD: Speed Wind
+	*VitesseVent : Valeur de la vitesse du vent
+	*Unité : L'unité sera en Noeud (KTS) 
+
+-DWD: Direction Wind
+	*DirectionVent: Valeur de la direction du vent
+	*Unité: L'unité sera en Degrés (D) 
+
+-TMP: Température
+	*TemperatureAir: Valeur de la température
+	*Unité: L'unité sera en Degrés Celsius (C)
+
+-RHY: Hygrométrie Relative
+	*Hygrométrie: Valeur du taux d'humidité
+	*Unité: L'unité sera en pourcentage (%)
+
+-RPA: Pression Atmosphérique Relative
+	*PressionAtmosphérique: Valeur de la pression Atmosphérique
+	*Unité: L'unité sera en Bar (B)
+
+-VAD: Validité des infos de la Trame
+	*Validité: Renvoie l'état de validité de la trame (Y pour valide, N pour non valide)
+
+
+Début de la trame: (&#!)
+
+Séparateur d'informations: (;!)
+
+Séparateur de données: (::)
+
+Fin de la trame: (:!)
+
+
+
+
+
+
+Consommation Capteur:
+
+-CV3F : 25mA, 10 à 14 V ~ 12V
+
+-Arduino : 50mA, 5V
+
+-
+
+
