@@ -1,0 +1,7 @@
+Consommation Capteur:
+
+-CV3F : 25mA, 10 à 14 V ~ 12V
+
+-Arduino : 50mA, 5V
+
+-

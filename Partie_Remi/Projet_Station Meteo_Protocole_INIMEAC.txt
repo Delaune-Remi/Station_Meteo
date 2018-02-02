@@ -1,7 +1,7 @@
 
 Protocole TRAME INIMEAC :
 
-&#!INIMEAC;!SWD::VitesseVent::Unité;!DWD::DirectionVent::Unité;!TMP::TempératureAir::Unité;!RHY::Hygrométrie::Unité;!RPA::PressionAtmosphérique::Unité;!VAD:Validité:!
+&#!INIMEAC;!SWD::000.00::KTS;!DWD::000.00::D;!TMP::±000.0::C;!RHY::000::%;!RPA::1.00000::B;!VAD::N:!
 
 Légende:
 
@@ -39,17 +39,4 @@ Séparateur de données: (::)
 
 Fin de la trame: (:!)
 
-
-
-
-
-
-Consommation Capteur:
-
--CV3F : 25mA, 10 à 14 V ~ 12V
-
--Arduino : 50mA, 5V
-
--
-
-
+© DELAUNE Rémi 
