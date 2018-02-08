@@ -4,8 +4,8 @@ CapteurCV3F::CapteurCV3F(const char* nom){
 	m_DirectionVent=new char [6];
 	m_VitesseVent=new char [7];
 	m_Temperature=new char [6];
-	m_TrameNMEA_MWV=new char [26];
-	m_TrameNMEA_XDR=new char [22];
+	m_TrameNMEA_MWV=new char [30];
+	m_TrameNMEA_XDR=new char [30];
 	m_Nom=new char [8];
 }
 
@@ -31,10 +31,27 @@ const char* CapteurCV3F::getTemperature(){
 }
 
 bool CapteurCV3F::setDirectionVent(){
-	setTrameNMEA();
+	
 }
 
 void CapteurCV3F::setTrameNMEA (){
 	Serial3.begin(4800);
-	Serial3.read(); 					// Lecture de RX3 et envoie au moniteur serie
+	
+	char trameNMEA [30];
+	Serial3.readBytesUntil('\n',trameNMEA,30);
+	
+	trameNMEA[29]='\0';
+	
+	if (trameNMEA[0] == '$' && trameNMEA[1] == 'I'){
+		this->m_TrameNMEA_MWV = trameNMEA;
+	}
+	
+	if (trameNMEA[0] == '$' && trameNMEA[2] == 'I'){
+		this->m_TrameNMEA_XDR = trameNMEA;
+	}
+}
+
+const char* const CapteurCV3F::getTrameNMEA_MWV(){
+	setTrameNMEA();
+	return this->m_TrameNMEA_MWV;
 }
