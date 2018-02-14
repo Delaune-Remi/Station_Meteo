@@ -7,16 +7,16 @@
 #include <WProgram.h>
 #endif
 
-#include <string.h>
+#include <String.h>
 
-class Inimeac (){
+class Inimeac{
 	private:
 		char* m_Trame;
 		char m_Debug;
 	public:
 		Inimeac();
 		~Inimeac();
-		char setTrame(const char* VitesseVent="000.00", const char* DirectionVent="000.00", const char* Temperatute="000.0",const char* Hygrometrie="000", const char* Pression="1.00000", const char* Validite="N");
+		char setTrame(const char* VitesseVent="000.00", const char* DirectionVent="000.0", const char* Temperature="000.00",const char* Hygrometrie="000.00", const char* Pression="1013.25", const char* Validite="N");
 		/*
 		 * La fonction renvoie un caractere referencant si il y a eu un probleme
 		 * ex: 
@@ -34,6 +34,6 @@ class Inimeac (){
 /*
 Exemple de Trame INIMEAC:
 
-&#!INIMEAC;!SWD::000.00::KTS;!DWD::000.00::D;!TMP::±000.0::C;!RHY::000::%;!RPA::1.00000::B;!VAD::N:!
+&#!INIMEAC;!SWD::000.00::KTS;!DWD::000.0::D;!TMP::000.00::C;!RHY::000.00::%;!RPA::1013.25::hPa;!VAD::N:!
 
 */

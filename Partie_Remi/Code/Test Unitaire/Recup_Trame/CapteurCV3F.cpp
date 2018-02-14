@@ -34,6 +34,15 @@ bool CapteurCV3F::setDirectionVent(){
 	
 }
 
+bool CapteurCV3F::setVitesseVent(){
+  setTrameNMEA();
+  
+}
+
+bool CapteurCV3F::setTemperature(){
+  
+}
+
 void CapteurCV3F::setTrameNMEA (){
 	Serial3.begin(4800);
 	
@@ -65,5 +74,13 @@ const char* const CapteurCV3F::getTrameNMEA_MWV(){
 const char* const CapteurCV3F::getTrameNMEA_XDR(){
   setTrameNMEA();
   return m_TrameNMEA_XDR;
+}
+
+bool validationTrameNMEA_MWV(const char* const TrameNMEA_MWV){
+  if (TrameNMEA_MWV[25] == 'A'){
+    return true;
+  }else{
+    return false;
+  }
 }
 

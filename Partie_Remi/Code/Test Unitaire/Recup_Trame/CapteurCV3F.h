@@ -20,7 +20,7 @@ class CapteurCV3F {
 		bool setVitesseVent();											            // Fonction permettant de stocker dans la variable m_VitesseVent la valeur de la vitesse du vent issue de la trame NMEA_MWV
 		bool setTemperature();											// Fonction permettant de stocker dans la variable m_Temperature la valeur de la temperature issue de la trame NMEA_XDR
 		void setTrameNMEA();											
-		bool validationTrameNMEA_MWV(const char* const m_TrameNMEA_MWV);// Fonction permettant de savoir si la trame NMEA_MWV est correct (true or false)
+		bool validationTrameNMEA_MWV(const char* const TrameNMEA_MWV);// Fonction permettant de savoir si la trame NMEA_MWV est correct (true or false)
 	public:
 		CapteurCV3F(const char* nom = "CAPTEUR");			// Constructeur permettant d'initialiser les valeurs des variables
 		~CapteurCV3F();													      // Destructeur permettant de liberer l'espace memoire 

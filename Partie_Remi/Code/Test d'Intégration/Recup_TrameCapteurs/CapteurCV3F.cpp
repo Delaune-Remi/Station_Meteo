@@ -1,8 +1,8 @@
 #include "CapteurCV3F.h"
 
 CapteurCV3F::CapteurCV3F(const char* nom){
-	m_DirectionVent=new char [6];
-	m_VitesseVent=new char [7];
+	m_DirectionVent=new char [5];
+	m_VitesseVent=new char [6];
 	m_Temperature=new char [6];
 	m_TrameNMEA_MWV=new char [28];
 	m_TrameNMEA_XDR=new char [21];
@@ -19,10 +19,12 @@ CapteurCV3F::~CapteurCV3F(){
 }
 
 const char* CapteurCV3F::getDirectionVent(){
+  setDirectionVent();
 	return (this->m_DirectionVent);
 }
 
 const char* CapteurCV3F::getVitesseVent(){
+  setVitesseVent();
 	return (this->m_VitesseVent);
 }
 
@@ -31,7 +33,31 @@ const char* CapteurCV3F::getTemperature(){
 }
 
 bool CapteurCV3F::setDirectionVent(){
-	
+	 setTrameNMEA();
+  if (validationTrameNMEA_MWV()==true){
+    for (int i=0;i<5;i++){
+      m_DirectionVent[i]=m_TrameNMEA_MWV[7+i];
+    }
+    return true;
+  }else{
+    return false;
+  }
+}
+
+bool CapteurCV3F::setVitesseVent(){
+  setTrameNMEA();
+  if (validationTrameNMEA_MWV()==true){
+    for (int i=0;i<=5;i++){
+      m_VitesseVent[i]=m_TrameNMEA_MWV[15+i];
+    }
+    return true;
+  }else{
+    return false;
+  }
+}
+
+bool CapteurCV3F::setTemperature(){
+  
 }
 
 void CapteurCV3F::setTrameNMEA (){
@@ -65,5 +91,13 @@ const char* const CapteurCV3F::getTrameNMEA_MWV(){
 const char* const CapteurCV3F::getTrameNMEA_XDR(){
   setTrameNMEA();
   return m_TrameNMEA_XDR;
+}
+
+bool CapteurCV3F::validationTrameNMEA_MWV(){
+  if (m_TrameNMEA_MWV[24] == 'A'){
+    return true;
+  }else{
+    return false;
+  }
 }
 
