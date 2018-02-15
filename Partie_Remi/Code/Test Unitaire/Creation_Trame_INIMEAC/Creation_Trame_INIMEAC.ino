@@ -1,15 +1,16 @@
-#include "Inimeac.h" 
+#include "Inimeac.h"
 
 Inimeac trame;
 
 void setup() {
-  Serial.begin(9600);
-  Serial2.begin(38400); // Vitesse de transmission du module bluetooth
+  Serial3.begin(38400); // Vitesse de transmission du module bluetooth
+  Serial.begin(38400);
 }
 
 void loop() {
-  char vad;
-  vad = trame.setTrame();
-  Serial.println(trame.getTrame());
-  Serial2.println(trame.getTrame());
-}
+  trame.setTrame();
+  if (Serial3.available())
+    Serial3.write(Serial.read());
+  if(Serial.available())
+    Serial.write(Serial3.read());
+ }

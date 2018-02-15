@@ -27,6 +27,15 @@ class Inimeac{
 		/*
 		 * La fonction permet de recuperer la trame INIMEAC
 		 */
+     char decodeTrameINIMEAC();
+     /*
+      * La fonction permet de decoder la trame INMEAC reçue
+      * Elle accepte 6 parametres qui permettent de stocker la valeur des donnees.  
+      * La fonction renvoie un caractere referencant si il y a eu un probleme
+     * ex: 
+     *  - V pour trame bien decoder
+     *  - E pour trame erronnee
+      */
 };
 
 #endif

@@ -28,7 +28,7 @@ char Inimeac::setTrame (const char* VitesseVent,const char* DirectionVent,const 
 	strcat (this->m_Trame,";!VAD::");
 	strcat (this->m_Trame,Validite);
 	strcat (this->m_Trame,":!");
-	if (*Validite == 'Y'){
+	if (Validite == 'Y'){
 		return 'V';
 	}else{
 		return 'E';
@@ -38,3 +38,8 @@ char Inimeac::setTrame (const char* VitesseVent,const char* DirectionVent,const 
 char* Inimeac::getTrame (){
 	return (this->m_Trame);
 }
+
+char Inimeac::decodeTrameINIMEAC(){
+  
+}
+
