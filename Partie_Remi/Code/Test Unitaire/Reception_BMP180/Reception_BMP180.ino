@@ -1,13 +1,11 @@
 /*Inclusion des librairies */
 
 #include "SFE_BMP180.h"
-#include "CapteurCV3F.h"
 #include <Wire.h>
 
 /* Creation d'objets */
 
 SFE_BMP180 bmp180;
-CapteurCV3F capteurCV3F;
 
 /*Creation des definitions*/
 

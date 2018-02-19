@@ -62,10 +62,9 @@ bool CapteurCV3F::setTemperature(){
 
 void CapteurCV3F::setTrameNMEA (){
 	Serial3.begin(4800);
-	
 	char trameNMEA [28];
 	Serial3.readBytesUntil('\n',trameNMEA,28);
-	
+	Serial3.end();
 	if (trameNMEA[0] == '$' && trameNMEA[1] == 'I'){
 	//  Serial.println("TRAME_MWV");
     for (int i=0;i<=27;i++)

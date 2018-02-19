@@ -12,11 +12,12 @@
 class Inimeac{
 	private:
 		char* m_Trame;
+    char* m_TrameDecode;
 		char m_Debug;
 	public:
 		Inimeac();
 		~Inimeac();
-		char setTrame(const char* VitesseVent="000.00", const char* DirectionVent="000.0", const char* Temperature="000.00",const char* Hygrometrie="000.00", const char* Pression="1013.25", const char* Validite="N");
+		char setTrame(const char* const VitesseVent="000.00", const char* const DirectionVent="000.0", const char* const Temperature="000.00",const char* const Hygrometrie="000.00", const char* const Pression="1013.25", const char* const Validite="N");
 		/*
 		 * La fonction renvoie un caractere referencant si il y a eu un probleme
 		 * ex: 
@@ -27,7 +28,7 @@ class Inimeac{
 		/*
 		 * La fonction permet de recuperer la trame INIMEAC
 		 */
-     char decodeTrameINIMEAC();
+     char decodeTrameINIMEAC( char* const vitesse,char* const directionVent,char* const temperature,char* const hygrometrie,char* const pression);
      /*
       * La fonction permet de decoder la trame INMEAC reçue
       * Elle accepte 6 parametres qui permettent de stocker la valeur des donnees.  
