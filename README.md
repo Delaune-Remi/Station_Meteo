@@ -1,11 +1,10 @@
-![Logo aeroclub](https://zupimages.net/up/18/16/jeij.png)
-![Logo lycee](http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png)
-
-Station_Meteo
-=============
+<div style="text-align:center"><img src ="https://zupimages.net/up/18/16/jeij.png" /></div>
+<div style="text-align:center"><img src ="http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png" /></div>
 
 
-<h1> Presentation  </h1>
+<h1> Station Meteo </h1>
+
+<h2> Presentation  </h2>
 
 Projet de fin d'etude du BTS SN EC à Yvetot
 
