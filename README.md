@@ -10,4 +10,4 @@
 
 ![Station Meteo](https://zupimages.net/up/18/16/bgc8.png)
 
-<h4 align="center">Lien vers l'Aerodrome de Saint-Valery-En-Caux : [http://aeroclub.cauchois.free.fr/](http://aeroclub.cauchois.free.fr/)</h4>
+<h4 align="center">Lien vers l'Aerodrome de Saint-Valery-En-Caux : http://aeroclub.cauchois.free.fr/</h4>
