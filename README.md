@@ -2,6 +2,8 @@
 Station_Meteo
 =============
 
+![Logo aeroclub] https://zupimages.net/up/18/16/jeij.png
+
 Projet de fin d'etude du BTS SN EC à Yvetot
 
 ![Station Meteo](https://zupimages.net/up/18/16/bgc8.png)
