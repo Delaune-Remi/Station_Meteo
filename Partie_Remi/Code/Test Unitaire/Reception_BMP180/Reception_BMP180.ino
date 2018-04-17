@@ -21,8 +21,13 @@ void loop() {
      double T,P,p0;
      String Te,Pa;
      
-     status = bmp180.startTemperature();
+/* Permet l'initialisation de la recuperation de la temperature pour le capteur*/
+
+     status = bmp180.startTemperature(); 
      delay(status);
+     
+/* Permet l'obtention de la temperature*/
+
      status = bmp180.getTemperature(T);
      if (status != 0){
         Te= String(T,2);

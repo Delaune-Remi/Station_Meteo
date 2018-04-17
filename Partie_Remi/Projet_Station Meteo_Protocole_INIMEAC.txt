@@ -1,7 +1,7 @@
 
 Protocole TRAME INIMEAC :
 
-&#!INIMEAC;!SWD::000.00::KTS;!DWD::000.00::D;!TMP::000.00::C;!RHY::000.00::%;!RPA::1013.25::hPa;!VAD::N:!
+&#!INIMEAC;!SWD::000.00::KTS;!DWD::000.00::D;!TMP::00.00::C;!RHY::000.00::%;!RPA::1013.25::hPa;!VAD::N:*
 
 Légende:
 
@@ -37,6 +37,6 @@ Séparateur d'informations: (;!)
 
 Séparateur de données: (::)
 
-Fin de la trame: (:!)
+Fin de la trame: (:*)
 
 © DELAUNE Rémi 

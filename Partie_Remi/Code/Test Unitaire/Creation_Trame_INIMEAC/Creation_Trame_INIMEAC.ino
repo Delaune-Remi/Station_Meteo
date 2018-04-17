@@ -9,6 +9,8 @@ void setup() {
 
 void loop() {
   trame.setTrame();
+  Serial2.write(trame.getTrame());
+  Serial2.write('\n');
   Serial.write(trame.getTrame());
   Serial.write('\n');
 }

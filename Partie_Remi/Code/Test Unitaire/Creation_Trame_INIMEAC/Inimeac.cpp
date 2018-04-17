@@ -2,15 +2,15 @@
 
 Inimeac::Inimeac(){
 	this->m_Trame=new char [104];
-  this->m_TrameDecode=new char [94];
+  this->m_TrameDecode=new char [104];
 }
 
 Inimeac::~Inimeac(){
 	delete (this->m_Trame);
-  delete (this->m_TrameDecode);
+  delete (m_TrameDecode);
 }
 
-char Inimeac::setTrame (const char* const VitesseVent,const char* DirectionVent,const char* Temperature,const char* Hygrometrie, const char* Pression, const char* Validite){
+char Inimeac::setTrame (const char* VitesseVent,const char* DirectionVent,const char* Temperature,const char* Hygrometrie, const char* Pression, const char* Validite){
 	strcpy (this->m_Trame,"&#!INIMEAC");
 	strcat (this->m_Trame,";!SWD::");
 	strcat (this->m_Trame,VitesseVent);
@@ -30,7 +30,7 @@ char Inimeac::setTrame (const char* const VitesseVent,const char* DirectionVent,
 	strcat (this->m_Trame,";!VAD::");
 	strcat (this->m_Trame,Validite);
 	strcat (this->m_Trame,":!");
-	if (Validite == 'Y'){
+	if (Validite == "Y"){
 		return 'V';
 	}else{
 		return 'E';
@@ -42,10 +42,9 @@ char* Inimeac::getTrame (){
 }
 
 char Inimeac::decodeTrameINIMEAC( char* const VitesseVent,char* const DirectionVent,char* const Temperature, char* const Hygrometrie,char* const Pression){
-  if ( Serial2.find("&#!INIMEAC") == true){
-    Serial2.readBytes(this->m_TrameDecode,94);
-    Serial.write (this->m_TrameDecode);
-  }
+     
+  Serial2.readBytesUntil('\n',this->m_TrameDecode,104);
+  Serial.write (this->m_TrameDecode);
   if (this->m_TrameDecode[91] == 'Y'){
     VitesseVent[0]= m_TrameDecode[7];
     VitesseVent[1]= this->m_TrameDecode[8];

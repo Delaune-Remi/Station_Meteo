@@ -14,7 +14,11 @@ void loop() {
    */ 
       char trame [30];
       Serial3.readBytesUntil('\n',trame,30); // Lecture des trame NMEA0183
-      if ( trame [0] == '$' && (trame [1]=='I' || trame [2] == 'I') ){
+      if ( trame [0] == '$' && (trame [1]=='I' || trame [2] == 'I') ){    
+        /*
+         * Affiche seulement les trames utiles
+         * Trame XDR et MWV
+         */
          Serial.write(trame[0]);
          Serial.write(trame[1]);
          Serial.write(trame[2]);

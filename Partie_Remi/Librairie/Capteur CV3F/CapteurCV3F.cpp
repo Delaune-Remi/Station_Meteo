@@ -61,10 +61,10 @@ bool CapteurCV3F::setTemperature(){
 }
 
 void CapteurCV3F::setTrameNMEA (){
-	Serial3.begin(4800);	// Initialise le port serie pour recevoir la trame 
+	//Serial3.begin(4800);	// Initialise le port serie pour recevoir la trame 
 	char trameNMEA [28];
 	Serial3.readBytesUntil('\n',trameNMEA,28); //Recupere les 28 premiers caractere jusqu'a le caractere \n 
-	Serial3.end();
+	//Serial3.end();
 	if (trameNMEA[0] == '$' && trameNMEA[1] == 'I'){
     for (int i=0;i<=27;i++)
     {

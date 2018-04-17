@@ -1,8 +1,8 @@
 #include "CapteurCV3F.h"
 
 CapteurCV3F::CapteurCV3F(const char* nom){	// Constructeur
-	m_DirectionVent=new char [5];
-	m_VitesseVent=new char [6];
+	m_DirectionVent=new char [4];
+	m_VitesseVent=new char [5];
 	m_Temperature=new char [6];
 	m_TrameNMEA_MWV=new char [28];
 	m_TrameNMEA_XDR=new char [21];
@@ -61,10 +61,10 @@ bool CapteurCV3F::setTemperature(){
 }
 
 void CapteurCV3F::setTrameNMEA (){
-	Serial3.begin(4800);	// Initialise le port serie pour recevoir la trame 
+	//Serial3.begin(4800);	// Initialise le port serie pour recevoir la trame 
 	char trameNMEA [28];
 	Serial3.readBytesUntil('\n',trameNMEA,28); //Recupere les 28 premiers caractere jusqu'a le caractere \n 
-	Serial3.end();
+	//Serial3.end();
 	if (trameNMEA[0] == '$' && trameNMEA[1] == 'I'){
     for (int i=0;i<=27;i++)
     {
