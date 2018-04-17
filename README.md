@@ -3,11 +3,17 @@
   <img align="center" src ="http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png" />
 </p>
 
-
+<p align="center">
 
 <h1> Station Meteo </h1>
 
+</p>
+
+<p align="center">
+
 <h2> Presentation  </h2>
+
+</p>
 
 Projet de fin d'etude du BTS SN EC à Yvetot
 
