@@ -1,4 +1,4 @@
-<p align="center">
+<p style="border:thin black solid;text-align:center">
   <img align="center" src ="https://zupimages.net/up/18/16/jeij.png" />
   <img align="center" src ="http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png" />
 </p>
