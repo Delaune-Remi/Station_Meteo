@@ -4,4 +4,6 @@ Consommation Capteur:
 
 -Arduino : 50mA, 5V
 
--
+-2 Bluetooth environ 70mA
+
+-HIH8120 & BMP180 environ 25mA
