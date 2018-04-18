@@ -4,7 +4,7 @@
 </p>
 
 
-- ![#f03c15] `<h1 align="center"> Station Meteo </h1>`
+<h1 align="center"> Station Meteo </h1>
 
 <h2 align="center"> Presentation  </h2>
 
