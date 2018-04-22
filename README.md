@@ -1,7 +1,6 @@
-<p align="left" >
-  <img align="center" src ="https://zupimages.net/up/18/16/jeij.png" />
-<p align="right">
-  <img align="center" src ="http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png" />
+<p  >
+  <img align="left" src ="https://zupimages.net/up/18/16/jeij.png" />
+  <img align="right" src ="http://queneau-lyc.spip.ac-rouen.fr/IMG/eva_habillage/QueneauNomTitre.png" />
 </p>
 
 
