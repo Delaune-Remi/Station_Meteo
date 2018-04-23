@@ -23,11 +23,11 @@
 
 ---
 
-* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Analyse_Fonctionnelle" title="SysML !">Analyse Fonctionnelle</a>
-* Compte Rendu
-* Documentation
-* Partie Alexandre
-* Partie Erwan
-* Partie Remi
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Analyse_Fonctionnelle" title="SysML">Analyse Fonctionnelle</a>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Compte%20Rendu" title="Compte Rendu">Compte Rendu</a>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Documentation" title="Documentation Technique">Documentation</a>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Partie_Alexandre" title="Etudiant 2">Partie Alexandre</a>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Partie_Erwan" title="Etudiant 3">Partie Erwan</a>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Partie_Remi" title="Etudiant 1">Partie Remi</a>
 
 ---
