@@ -23,7 +23,7 @@
 
 ---
 
-* <p><a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Analyse_Fonctionnelle" title="SysML !">Analyse Fonctionnelle</a></p>
+* <a href="https://github.com/Delaune-Remi/Station_Meteo/tree/master/Analyse_Fonctionnelle" title="SysML !">Analyse Fonctionnelle</a>
 * Compte Rendu
 * Documentation
 * Partie Alexandre
