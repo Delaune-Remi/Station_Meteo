@@ -1,6 +1,6 @@
 ---
 
-<p align="center"><h1> Sommaire </h1></p>
+<h1 align="center"> Sommaire </h1>
 
 ---
 
