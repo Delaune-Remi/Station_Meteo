@@ -3,13 +3,14 @@
 
 <table>
 <tr>
-<td rowpsan="2">Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
+<td colspan="2">Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
 ce fichier est ouvrable avec Entreprise Architect.
 </td>
 <td>le fichier Scenario_Cas__Utilisation.odt contient les scenarios que la station meteo peut realiser. 
 </td>
 </tr>
 </table>
+
 ---
 
 <p  align="center">
