@@ -7,7 +7,7 @@
 ce fichier est ouvrable avec Entreprise Architect.
 </td>
 <tr align="center">
-<td>le fichier Scenario_Cas__Utilisation.odt contient les scenarios que la station meteo peut realiser. 
+<td>Le fichier Scenario_Cas__Utilisation.odt contient les scenarios que la station meteo peut realiser. 
 </td>
 </tr>
 </table>
