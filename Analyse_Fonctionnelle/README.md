@@ -1,6 +1,8 @@
 
+<h1 align="center"> Presentation </h1>
+
 <table>
-<td>																									 
+<td align="center">																									 
 Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
 ce fichier est ouvrable avec Entreprise Architect							 
 le fichier Scenario_Cas__Utilisation.odt contient les scenarios que la station meteo peut realisee 
