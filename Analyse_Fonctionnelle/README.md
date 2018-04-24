@@ -27,13 +27,13 @@ ce fichier est ouvrable avec Entreprise Architect.
 ---
 
 <p  align="center">
-  <img align="center" src ="https://zupimages.net/up/18/17/jyk2.png" />
+  <img align="center" src ="https://zupimages.net/up/18/17/3las.png" />
 </p>
 
 ---
 
 <p  align="center">
-  <img align="center" src ="https://zupimages.net/up/18/17/fo1e.png" />
+  <img align="center" src ="https://zupimages.net/up/18/17/z3x1.png" />
 </p>
 
 ---
