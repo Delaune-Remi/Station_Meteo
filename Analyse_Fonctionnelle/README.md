@@ -6,6 +6,7 @@
 <td colspan="2">Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
 ce fichier est ouvrable avec Entreprise Architect.
 </td>
+<tr>
 <td>le fichier Scenario_Cas__Utilisation.odt contient les scenarios que la station meteo peut realiser. 
 </td>
 </tr>
