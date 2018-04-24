@@ -19,7 +19,7 @@
 ---
 
 <p  align="center">
-  <img align="center" src ="https://zupimages.net/up/18/17/5chr.png" />
+  <img align="center" src ="https://zupimages.net/up/18/17/fo1e.png" />
 </p>
 
 ---
