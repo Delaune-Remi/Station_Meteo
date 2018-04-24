@@ -1,7 +1,7 @@
 
 <h1 align="center"> Presentation </h1>
 
-<table align="center">
+<table>
 <td align="center">																									 
 Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
 ce fichier est ouvrable avec Entreprise Architect.</td>	
