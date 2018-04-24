@@ -3,7 +3,7 @@
 
 <table>
 <tr>
-<td align="center" colspan="2">Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
+<td colspan="2" align="center">Vous trouverez dans le fichier Station_Meteo.eap les differents diagrammes presentes ci-dessous	 
 ce fichier est ouvrable avec Entreprise Architect.
 </td>
 </tr>
