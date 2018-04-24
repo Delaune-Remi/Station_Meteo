@@ -1,5 +1,5 @@
 
-<h1 style="color:red" align="center"> Presentation </h1>
+<h1 align="center"><font color="red"> Presentation </font></h1>
 
 <table>
 <tr align="center">
