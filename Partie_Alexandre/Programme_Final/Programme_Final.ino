@@ -15,6 +15,15 @@
   
   #include "Inimeac.h"
 
+// [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+// []
+// []        PROGRAMME PRINCIPAL CREE PAR ALEXANDRE LEBRUN
+// []
+// []  
+// []                PROJET STATION METEO (2018-06)
+// []
+// [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
 /********  Creation des variables afficheurs *******/   
 
   CLCD lcd(0x02,16,2); /* Creation du premiere afficheur avec parametre (adresse du module CLCD, nombre de caractere par ligne, nombre de ligne) */ 
@@ -35,8 +44,13 @@
   byte mac[] = {0x90, 0x98, 0x97, 0x00, 0x05, 0xAB}; /* Creation de l'adresse MAC defini par moi-meme */
   byte ip[] = {192, 168,  190,  123}; /* Creation de l'adresse IP static défini par moi-meme */
   EthernetServer serveur(80); /* Creation d'un server qui ecoute sur le port 80 ( HTTP ) */ 
-  String trameINIMEAC = ""; /* Creation d'une chaîne pour contenir les données entrantes */
+
+/********  Creation de la chaine contenant cette trame *******/  
+  
+  String trameINIMEAC = ""; /* Creation d'une chaine pour contenir les données entrantes */
   boolean trameComplete = false; /* Si la chaîne est complete */
+
+/********  Fonction setup pour les initialisations *******/  
   
   void setup() {
     initI2C(0); /* Initialisation de la vitesse du bus I2C à 0 */
@@ -52,47 +66,49 @@
     serveur.begin();
     trameINIMEAC.reserve(104); /* Reservation de 200 caractere maximum pour la trame */
   }
+
+/********  Fonction loop pour le programme principal *******/  
   
   void loop() {
+
     siteWeb(); /* Fonction qui integre le siteWeb dans le programme */ 
     
     if (trameComplete) { /* Si la trame est complete */
-        Serial.println(trameINIMEAC);
-        Trame.decodeTrameINIMEAC(trameINIMEAC,true,vitesse,directionVent,temperature,hygrometrie,pression);
-        // clear the string:
-        trameINIMEAC = "";
-        trameComplete = false;
-        afficheur();
+        Serial.println(trameINIMEAC); /* On affiche cette trame sur le moniteur serie de l'arduino */
+        Trame.decodeTrameINIMEAC(trameINIMEAC,true,vitesse,directionVent,temperature,hygrometrie,pression); /* Permet de decoder la trame avec les les differents parametres */
+        trameINIMEAC = ""; /* Remet la chaine à zero */
+        trameComplete = false; /* Donc trame complete est fausse */
+        afficheur(); /* Fonction qui integre les afficheurs dans le programme */
     }   
   }
+
+/********  Fonction serialEvent3 permettant de recuperer la trame *******/
   
   void serialEvent3() {
-    while (Serial3.available()) {
-      // get the new byte:
-      char caractere = (char)Serial3.read();
-      // add it to the trameINIMEAC:
-      trameINIMEAC += caractere;
-      // if the incoming character is a newline, set a flag so the main loop can
-      // do something about it:
-      if (caractere == '\n') {
-        trameComplete = true;
+    while (Serial3.available()) { /* Tant que le port serie 3 est disponible */
+      char caractere = (char)Serial3.read(); /* On prend les nouveaux octets */
+      trameINIMEAC += caractere; /* On ajoute les nouveaux octets dans la variable trameINIMEAC */
+      if (caractere == '\n') {  /* Si le prochain caractere est un caractere de nouvelle ligne */
+        trameComplete = true;  /* on met la trameComplete a vrai */
       }
     }
-    Serial3.flush();
+    Serial3.flush(); /* On vide le buffer du port serie 3 */
   }
+
+/********  Fonction siteWeb regroupant la pageWeb et le serveur *******/  
 
   void siteWeb() {
     
-    EthernetClient client = serveur.available(); //on écoute le port
-    if (client) { //si client connecté
-      //Serial.println("\nClient en ligne\n"); //on le dit...
-      if (client.connected()) { // si le client est en connecté
-        pageWeb(client); // fonction pour l'entête de la page HTML
-        //Serial.println("Fin de communication avec le client\n");
-        client.stop(); //on déconnecte le client
+    EthernetClient client = serveur.available(); /* on écoute le port */
+    if (client) { /* si client connecté */
+      if (client.connected()) { /* si le client est en connecté */
+        pageWeb(client); /* fonction pour l'entête de la page HTML */
+        client.stop(); /* on déconnecte le client */
       }
     }
   }
+
+/********  Fonction pageWeb qui regroupe l'HTML et le CSS *******/   
   
   void pageWeb(EthernetClient cl) {
     
@@ -302,113 +318,114 @@
       cl.println("</body>");
     cl.println("</html>");
   }
+
+/********  Fonction afficheur pour l'affichage des deux ecrans I2C *******/ 
   
   void afficheur(void){
-                              lcd.setCursor(0,0);
-                              lcd.print(temperature [0]);
-                              lcd.print(temperature [1]);
-                              lcd.print(temperature [2]);
-                              lcd.print(temperature [3]);
-                              lcd.print(char(223));
-                              lcd.print("C");
-  
-  
-                              if (pression [0]!='1'){
-                                if (pression [0]==':'){
-                                  if (pression [1]=='1'){
-                                    lcd.setCursor(1,0);
-                              lcd.print(pression [1]);
-                              lcd.print(pression [2]);
-                              lcd.print(pression [3]);
-                              lcd.print(pression [4]);
-                              lcd.print(pression [5]);
-                              lcd.print(pression [6]);
-                              lcd.print("hPa");
                               
-                                  }else{
-                              lcd.setCursor(1,0);
-                              lcd.print(pression [1]);
-                              lcd.print(pression [2]);
-                              lcd.print(pression [3]);
-                              lcd.print(pression [4]);
-                              lcd.print(pression [5]);
-                              lcd.print("hPa");
-                                  }
-                              }else{
-                                  lcd.setCursor(1,0);
-                                  lcd.print(pression [0]);
-                                  lcd.print(pression [1]);
-                                  lcd.print(pression [2]);
-                                  lcd.print(pression [3]);
-                                  lcd.print(pression [4]);
-                                  lcd.print("hPa");
-                                }
-                              }else{
-                                 lcd.setCursor(1,0);
-                                  lcd.print(pression [0]);
-                                  lcd.print(pression [1]);
-                                  lcd.print(pression [2]);
-                                  lcd.print(pression [3]);
-                                  lcd.print(pression [4]);
-                                  lcd.print(pression [5]);
-                                  lcd.print("hPa");
-                                 }
-                              
-                              
-                              if (hygrometrie [1]!='1'){
-                              lcd.setCursor(0,11);
-                              lcd.print(hygrometrie [1]);
-                              lcd.print(hygrometrie [2]);
-                              lcd.print(hygrometrie [3]);
-                              lcd.print(hygrometrie [4]);
-                              lcd.print("%");
-                              lcd.cursor_off();
-                              }else{
-                                lcd.setCursor(0,10);
-                                lcd.print(hygrometrie [1]);
-                                lcd.print(hygrometrie [2]);
-                                lcd.print(hygrometrie [3]);
-                                lcd.print(hygrometrie [4]);
-                                lcd.print(hygrometrie [5]);
-                                lcd.print("%");
-                                lcd.cursor_off();
-                              }
-  
-  if ((vitesse [0]=='0' || vitesse [0]==' ') && ( vitesse [1]=='0' || vitesse [1]==' ')){
-                vitesse [0]=' ';
-                vitesse [1]=' ';
-                lcd1.setCursor(0,0);
-                lcd1.print(vitesse [2]);
-                lcd1.print(vitesse [3]);
-                lcd1.print(vitesse [4]);
-                lcd1.print("kts");
-              }else if (vitesse [0]=='0' || vitesse [0]==' '){
-                vitesse [0]=' ';
-                lcd1.setCursor(0,0);
-                lcd1.print(vitesse [1]);
-                lcd1.print(vitesse [2]);
-                lcd1.print(vitesse [3]);
-                lcd1.print(vitesse [4]);
-                lcd1.print(vitesse [5]);
-                lcd1.print("kts");
-              }
-                              
-  if (directionVent [0]=='0' || directionVent [0]==' '){
-                directionVent [0]= ' ';
-                lcd1.setCursor(1,0);
-                lcd1.print(directionVent [1]);
-                lcd1.print(directionVent [2]);
-                lcd1.print(char(223));
-                lcd1.print(" ");
-                lcd1.cursor_off();
-              }else{
-                lcd1.setCursor(1,0);
-                lcd1.print(directionVent [0]);
-                lcd1.print(directionVent [1]);
-                lcd1.print(directionVent [2]);
-                lcd1.print(char(223));
-                lcd1.cursor_off();
-              }
-  
-  
-  }
+    lcd.setCursor(0,0);
+    lcd.print(temperature [0]);
+    lcd.print(temperature [1]);
+    lcd.print(temperature [2]);
+    lcd.print(temperature [3]);
+    lcd.print(char(223));
+    lcd.print("C");
+
+
+    if (pression [0]!='1'){
+      if (pression [0]==':'){
+        if (pression [1]=='1'){
+          lcd.setCursor(1,0);
+    lcd.print(pression [1]);
+    lcd.print(pression [2]);
+    lcd.print(pression [3]);
+    lcd.print(pression [4]);
+    lcd.print(pression [5]);
+    lcd.print(pression [6]);
+    lcd.print("hPa");
+    
+        }else{
+    lcd.setCursor(1,0);
+    lcd.print(pression [1]);
+    lcd.print(pression [2]);
+    lcd.print(pression [3]);
+    lcd.print(pression [4]);
+    lcd.print(pression [5]);
+    lcd.print("hPa");
+        }
+    }else{
+        lcd.setCursor(1,0);
+        lcd.print(pression [0]);
+        lcd.print(pression [1]);
+        lcd.print(pression [2]);
+        lcd.print(pression [3]);
+        lcd.print(pression [4]);
+        lcd.print("hPa");
+      }
+    }else{
+       lcd.setCursor(1,0);
+        lcd.print(pression [0]);
+        lcd.print(pression [1]);
+        lcd.print(pression [2]);
+        lcd.print(pression [3]);
+        lcd.print(pression [4]);
+        lcd.print(pression [5]);
+        lcd.print("hPa");
+       }
+    
+    
+    if (hygrometrie [1]!='1'){
+    lcd.setCursor(0,11);
+    lcd.print(hygrometrie [1]);
+    lcd.print(hygrometrie [2]);
+    lcd.print(hygrometrie [3]);
+    lcd.print(hygrometrie [4]);
+    lcd.print("%");
+    lcd.cursor_off();
+    }else{
+      lcd.setCursor(0,10);
+      lcd.print(hygrometrie [1]);
+      lcd.print(hygrometrie [2]);
+      lcd.print(hygrometrie [3]);
+      lcd.print(hygrometrie [4]);
+      lcd.print(hygrometrie [5]);
+      lcd.print("%");
+      lcd.cursor_off();
+    }
+
+    if ((vitesse [0]=='0' || vitesse [0]==' ') && ( vitesse [1]=='0' || vitesse [1]==' ')){
+      vitesse [0]=' ';
+      vitesse [1]=' ';
+      lcd1.setCursor(0,0);
+      lcd1.print(vitesse [2]);
+      lcd1.print(vitesse [3]);
+      lcd1.print(vitesse [4]);
+      lcd1.print("kts");
+      }else if (vitesse [0]=='0' || vitesse [0]==' '){
+        vitesse [0]=' ';
+        lcd1.setCursor(0,0);
+        lcd1.print(vitesse [1]);
+        lcd1.print(vitesse [2]);
+        lcd1.print(vitesse [3]);
+        lcd1.print(vitesse [4]);
+        lcd1.print(vitesse [5]);
+        lcd1.print("kts");
+      }
+    
+      if (directionVent [0]=='0' || directionVent [0]==' '){
+        directionVent [0]= ' ';
+        lcd1.setCursor(1,0);
+        lcd1.print(directionVent [1]);
+        lcd1.print(directionVent [2]);
+        lcd1.print(char(223));
+        lcd1.print(" ");
+        lcd1.cursor_off();
+        }else{
+          lcd1.setCursor(1,0);
+          lcd1.print(directionVent [0]);
+          lcd1.print(directionVent [1]);
+          lcd1.print(directionVent [2]);
+          lcd1.print(char(223));
+          lcd1.cursor_off();
+        }
+}
