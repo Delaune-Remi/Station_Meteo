@@ -14,28 +14,28 @@ ce fichier est ouvrable avec Entreprise Architect.
 
 ---
 
-<h4><u> Exigence.png </u></h4>
+#### _Exigence.png_
 <p  align="center">
   <img align="center" src ="https://zupimages.net/up/18/17/078u.png" />
 </p>
 
 ---
 
-<h4><u> UseCase.png </u></h4>
+#### _UseCase.png_
 <p  align="center">
   <img align="center" src ="https://zupimages.net/up/18/17/kinz.png" />
 </p>
 
 ---
 
-<h4><u> Sequence.png </u></h4>
+#### _Sequence.png_ 
 <p  align="center">
   <img align="center" src ="https://zupimages.net/up/18/17/3las.png" />
 </p>
 
 ---
 
-<h4><u> DefinitionBlocs.png </u></h4>
+#### _DefinitionBlocs.png_
 <p  align="center">
   <img align="center" src ="https://zupimages.net/up/18/17/z3x1.png" />
 </p>
