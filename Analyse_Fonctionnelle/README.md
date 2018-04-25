@@ -14,7 +14,7 @@ ce fichier est ouvrable avec Entreprise Architect.
 
 ---
 
-#### _Exigence.png_
+#### <u>Exigence.png</u>
 <p  align="center">
   <img align="center" src ="https://zupimages.net/up/18/17/078u.png" />
 </p>
