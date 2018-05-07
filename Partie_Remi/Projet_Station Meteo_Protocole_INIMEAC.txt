@@ -1,5 +1,5 @@
 
-Protocole TRAME INIMEAC :
+Protocole INIMEAC :
 
 &#!INIMEAC;!SWD::000.00::KTS;!DWD::000.00::D;!TMP::00.00::C;!RHY::000.00::%;!RPA::1013.25::hPa;!VAD::N:*
 
